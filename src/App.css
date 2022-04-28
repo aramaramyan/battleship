@@ -1,4 +1,7 @@
 .square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 36px;
     height: 36px;
     background-color: darkcyan;
@@ -14,5 +17,8 @@
 }
 
 .ship {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
     background-color: yellow;
 }

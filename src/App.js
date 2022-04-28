@@ -24,9 +24,11 @@ function App() {
         {row.map(square => (
           <div
             key={square}
-            className={`${setClass(ships.has(square), "ship", "square")} square`}
+            className="square"
             onClick={() => setShips(square)}
-          />))}
+          >
+            <div className={setClass(ships.has(square), "ship")}/>
+          </div>))}
       </div>)}
       <button onClick={setSetShipsMode}>Set Ships</button>
     </div>
