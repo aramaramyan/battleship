@@ -12,3 +12,7 @@
 .set_ships_mode {
     cursor: cell;
 }
+
+.ship {
+    background-color: yellow;
+}

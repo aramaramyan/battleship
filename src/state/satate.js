@@ -6,7 +6,7 @@ export const ACTION_TYPES = {
 export const defaultState = {
   player1:{
     isSetShipsMode: false,
-    ships: [],
+    ships: new Set(),
 
   },
   player2:{},
@@ -22,7 +22,15 @@ export function reducer(state, action) {
       }}
     }
     case ACTION_TYPES.SET_SHIPS: {
-
+      let newShips = new Set([...state.player1.ships]);
+      newShips.add(action.square);
+      return {
+        ...state,
+        player1: {
+          ...state.player1,
+          ships: newShips
+        }
+      };
     }
   }
 }

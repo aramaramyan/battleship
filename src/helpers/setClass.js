@@ -1,4 +1,4 @@
-export default function setClass(condition, class1, class2) {
+export default function setClass(condition, class1, class2 = "") {
   if(condition) {
     return class1;
   } else {
