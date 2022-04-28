@@ -1,19 +1,21 @@
+import groupArray from "./helpers/groupArray";
 import './App.css';
-
-const board = Array.from(Array(100).keys());
-const grouping = board.reduce((acc, item, index) => {
-  const currentIndex = index % 10;
-  (acc[currentIndex] = acc[currentIndex] || []).push(item);
-  return acc;
-}, []);
+import {useReducer} from "react";
+import {ACTION_TYPES, defaultState, reducer} from "./state/satate";
 
 function App() {
+  const [state, dispatch] = useReducer(reducer, defaultState);
+
+  function setShips() {
+    dispatch({type:ACTION_TYPES.SET_SET_SHIPS_MODE});
+  }
   return (
-    <>
-      {grouping.map(row => <div className="row">
+    <div className={`${state.player1.isSetShipsMode? "set_ships_mode" : ""}`}>
+      {groupArray().map(row => <div className="row">
         {row.map(square => <div className="square"></div>)}
       </div>)}
-    </>
+      <button onClick={setShips}>Set Ships</button>
+    </div>
   );
 }
 

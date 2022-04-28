@@ -8,3 +8,7 @@
 .row {
     display: flex;
 }
+
+.set_ships_mode {
+    cursor: cell;
+}
