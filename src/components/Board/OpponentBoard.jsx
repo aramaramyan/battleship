@@ -1,4 +1,4 @@
-import setClass from "../../helpers/setClass";
+import setClass, {setOpponentClass} from "../../helpers/setClass";
 import groupArray from "../../helpers/groupArray";
 import {ACTION_TYPES} from "../../state/satate";
 
@@ -18,12 +18,8 @@ export default function OpponentBoard({state, dispatch, player}){
       <h1>Player {player}</h1>
       {groupArray().map(row => <div key={row} className="row">
         {row.map(square => (
-          <div
-            key={square}
-            className="square"
-            onClick={() => hitShip(square)}
-          >
-            <div className={setClass(ships.has(square), "")} />
+          <div key={square} className="square" onClick={() => hitShip(square)}>
+            <div className={setOpponentClass(state.player1, square)} />
           </div>))}
       </div>)}
     </div>

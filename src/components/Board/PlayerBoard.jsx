@@ -1,9 +1,9 @@
-import setClass from "../../helpers/setClass";
+import setClass, {setPlayerClass} from "../../helpers/setClass";
 import groupArray from "../../helpers/groupArray";
 import {ACTION_TYPES} from "../../state/satate";
 
 export default function PlayerBoard({state, dispatch, player}){
- const {player1: {isSetShipsMode, ships}} = state;
+ const {player1: {isSetShipsMode}} = state;
 
  function setShips(id) {
   if(state.player1.isSetShipsMode) {
@@ -16,12 +16,8 @@ export default function PlayerBoard({state, dispatch, player}){
     <h1>Player {player}</h1>
     {groupArray().map(row => <div key={row} className="row">
      {row.map(square => (
-       <div
-         key={square}
-         className="square"
-         onClick={() => setShips(square)}
-       >
-        <div className={setClass(ships.has(square), "ship")}/>
+       <div key={square} className="square" onClick={() => setShips(square)}>
+        <div className={setPlayerClass(state.player1, square)}/>
        </div>))}
     </div>)}
    </div>

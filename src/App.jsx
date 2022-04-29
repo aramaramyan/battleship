@@ -1,8 +1,8 @@
-import './App.css';
 import {useReducer} from "react";
 import {ACTION_TYPES, defaultState, reducer} from "./state/satate";
-import PlayerBoard from "./components/PlayerBoard/PlayerBoard";
-import OpponentBoard from "./components/OpponentBoard/OpponentBoard";
+import PlayerBoard from "./components/Board/PlayerBoard";
+import OpponentBoard from "./components/Board/OpponentBoard";
+import './App.css';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, defaultState);

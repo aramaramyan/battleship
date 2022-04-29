@@ -12,13 +12,26 @@
     display: flex;
 }
 
-.set_ships_mode {
-    cursor: cell;
-}
-
 .ship {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color: yellow;
+}
+
+.hit {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.pass {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+}
+
+.set_ships_mode {
+    cursor: cell;
 }
