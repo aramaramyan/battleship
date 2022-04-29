@@ -50,8 +50,14 @@ export function reducer(state, action) {
       newPass.add(action.id);
       return {...state, [action.opponentID]: {...state[action.opponentID], pass: newPass}};
     }
+    case ACTION_TYPES.SET_IS_READY: {
+      return {
+        ...state,
+        [action.playerID]: {...state[action.playerID], isReady: true}
+      };
+    }
     case ACTION_TYPES.START_GAME: {
-
+      return {...state, gameStart: true};
     }
   }
 }
