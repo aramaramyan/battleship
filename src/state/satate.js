@@ -2,7 +2,9 @@ export const ACTION_TYPES = {
   SET_SHIPS: "SET_SHIPS",
   SET_BEATEN: "SET_BEATEN",
   SET_PASS: "SET_PASS",
-  SET_SET_SHIPS_MODE: "SET_SET_SHIPS_MODE"
+  SET_SET_SHIPS_MODE: "SET_SET_SHIPS_MODE",
+  START_GAME: "START_GAME",
+  SET_IS_READY: "SET_IS_READY",
 };
 
 export const defaultState = {
@@ -11,13 +13,16 @@ export const defaultState = {
     ships: new Set(),
     beaten: new Set(),
     pass: new Set(),
+    isReady: false,
   },
   player2:{
     isSetShipsMode: false,
     ships: new Set(),
     beaten: new Set(),
     pass: new Set(),
+    isReady: false,
   },
+  gameStart: false,
   turn: "player1",
 };
 
@@ -44,6 +49,9 @@ export function reducer(state, action) {
       const newPass = new Set([...state[action.opponentID].pass]);
       newPass.add(action.id);
       return {...state, [action.opponentID]: {...state[action.opponentID], pass: newPass}};
+    }
+    case ACTION_TYPES.START_GAME: {
+
     }
   }
 }

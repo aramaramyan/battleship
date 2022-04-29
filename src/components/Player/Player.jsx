@@ -4,7 +4,7 @@ import {useGameContext} from "../../Context";
 import {ACTION_TYPES} from "../../state/satate";
 
 export default function Player({ playerID }) {
-  const { dispatch } = useGameContext();
+  const { state: { turn, [playerID]: { ships } }, dispatch } = useGameContext();
 
   const opponentID = playerID === "player1"? "player2" : "player1";
 
@@ -16,6 +16,7 @@ export default function Player({ playerID }) {
     <div>
       <PlayerBoard playerID={playerID} />
       <button onClick={setSetShipsMode}>Set Ships</button>
+      <button disabled={!(ships.size === 20)}>Start Game</button>
       <OpponentBoard opponentID={opponentID} playerID={playerID} />
     </div>
   );
