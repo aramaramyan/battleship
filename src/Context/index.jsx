@@ -4,7 +4,7 @@ import {defaultState, reducer} from "../state/satate";
 const Context = createContext(defaultState);
 
 function useGameContext() {
-  useContext(Context);
+  return useContext(Context);
 }
 
 function Provider({children}) {

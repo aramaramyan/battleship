@@ -4,7 +4,7 @@ import {ACTION_TYPES} from "../../state/satate";
 import {useGameContext} from "../../Context";
 
 export default function PlayerBoard({ player }){
- const {[player]: {isSetShipsMode}, dispatch} = useGameContext();
+ const { state:{ [player]: { isSetShipsMode } }, state, dispatch } = useGameContext();
 
  function setShips(id) {
   if(isSetShipsMode) {

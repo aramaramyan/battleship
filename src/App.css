@@ -35,3 +35,8 @@
 .set_ships_mode {
     cursor: cell;
 }
+
+.players {
+    display: flex;
+    gap: 40px
+}

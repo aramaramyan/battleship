@@ -5,8 +5,10 @@ import './App.css';
 function App() {
   return (
     <Provider>
-      <Player playerID = "player1"/>
-      <Player playerID = "player2"/>
+      <div className="players">
+        <Player playerID = "player1"/>
+        <Player playerID = "player2"/>
+      </div>
     </Provider>
   );
 }
