@@ -16,7 +16,7 @@ export default function Player({ playerID }) {
     <div>
       <PlayerBoard playerID={playerID} />
       <button onClick={setSetShipsMode}>Set Ships</button>
-      <OpponentBoard playerID={playerID} opponentID={opponentID} />
+      <OpponentBoard opponentID={opponentID} playerID={playerID} />
     </div>
   );
 }

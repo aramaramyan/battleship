@@ -4,12 +4,14 @@ import './App.css';
 
 function App() {
   return (
-    <Provider>
-      <div className="players">
-        <Player playerID = "player1"/>
-        <Player playerID = "player2"/>
-      </div>
-    </Provider>
+    <div className="game">
+      <Provider>
+        <div className="players">
+          <Player playerID = "player1"/>
+          <Player playerID = "player2"/>
+        </div>
+      </Provider>
+    </div>
   );
 }
 

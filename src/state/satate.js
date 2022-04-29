@@ -27,21 +27,21 @@ export function reducer(state, action) {
       return {...state, [action.playerID]: {...state[action.playerID], isSetShipsMode: !state[action.playerID].isSetShipsMode}};
     }
     case ACTION_TYPES.SET_SHIPS: {
-      let newShips = new Set([...state[action.playerID].ships]);
+      const newShips = new Set([...state[action.playerID].ships]);
       if(newShips.has(action.square)){
-        newShips.delete(action.square)
+        newShips.delete(action.square);
       } else {
         newShips.add(action.square);
       }
       return {...state, [action.playerID]: {...state[action.playerID], ships: newShips}};
     }
     case ACTION_TYPES.SET_BEATEN: {
-      let newBeaten = new Set([...state[action.opponentID].beaten]);
+      const newBeaten = new Set([...state[action.opponentID].beaten]);
       newBeaten.add(action.id);
       return {...state, [action.opponentID]: {...state[action.opponentID], beaten: newBeaten}};
     }
     case ACTION_TYPES.SET_PASS: {
-      let newPass = new Set([...state[action.opponentID].pass]);
+      const newPass = new Set([...state[action.opponentID].pass]);
       newPass.add(action.id);
       return {...state, [action.opponentID]: {...state[action.opponentID], pass: newPass}};
     }
