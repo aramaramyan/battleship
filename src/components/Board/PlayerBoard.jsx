@@ -1,12 +1,13 @@
 import setClass, {setPlayerClass} from "../../helpers/setClass";
 import groupArray from "../../helpers/groupArray";
 import {ACTION_TYPES} from "../../state/satate";
+import {useGameContext} from "../../Context";
 
-export default function PlayerBoard({state, dispatch, player}){
- const {player1: {isSetShipsMode}} = state;
+export default function PlayerBoard({ player }){
+ const {[player]: {isSetShipsMode}, dispatch} = useGameContext();
 
  function setShips(id) {
-  if(state.player1.isSetShipsMode) {
+  if(isSetShipsMode) {
    dispatch({type: ACTION_TYPES.SET_SHIPS, square: id});
   }
  }

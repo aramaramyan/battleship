@@ -12,7 +12,8 @@ export const defaultState = {
     beaten: new Set(),
     pass: new Set(),
   },
-  player2:{    isSetShipsMode: false,
+  player2:{
+    isSetShipsMode: false,
     ships: new Set(),
     beaten: new Set(),
     pass: new Set(),},

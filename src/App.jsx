@@ -1,13 +1,12 @@
 import {Provider} from "./Context";
-import PlayerBoard from "./components/Board/PlayerBoard";
-import OpponentBoard from "./components/Board/OpponentBoard";
+import Player from "./components/Player/Player";
 import './App.css';
 
 function App() {
   return (
     <Provider>
-      <PlayerBoard player={1} />
-      <OpponentBoard player={2}/>
+      <Player playerID = "player1"/>
+      <Player playerID = "player2"/>
     </Provider>
   );
 }
